@@ -147,9 +147,9 @@ from http://blog.naver.com/gliese581gg/220645607537 or http://wiki.ros.org/indig
     ```
 
 ## Catkin Compile 
-merge the included `catkin_ws folder` to yours and `catkin_make`
+merge the included `catkin_ws src` to yours and `catkin_make`
 
-    merge catkin_ws folder
+    merge catkin_ws src
     catkin_make
 
 
@@ -178,13 +178,13 @@ sudo -s
 ```
 
  # 1. launch modules
-cd {path to robocup2017}/python_scripts
-./run_pepper.sh {ip}
+cd {YOUR_PATH}/python_scripts
+./run_pepper.sh {pepper's ip}
 
  #(example : ./run_pepper.sh 192.168.1.176)
 
  # 2. run your script in most right screen
-python ~~.py --ip 192.168.1.~~
+python ~~.py --ip 192.168.1.176
 
 ```
 
@@ -192,17 +192,19 @@ python ~~.py --ip 192.168.1.~~
 
 ```
  #1. Start Driver
-roslaunch pepper_jychoi pepper_start_jy.launch nao_ip:=192.168.1.~
+roslaunch pal_pepper pepper_start_jy.launch nao_ip:=192.168.1.~
 
 
  #2. Start navigation module
-roslaunch pepper_jychoi pepper_navigation.launch map_file:=full/path/to/your_yaml_file
+roslaunch pal_pepper pepper_navigation.launch map_file:=full/path/to/your_yaml_file 
+or edit pepper_navigation.launch's default map loading file
+roslaunch pal_pepper pepper_navigation.launch
 
  #You will see 2D pose Estimate. Set robot location and move it with 2D Nav Goal to some place.
  #Pepper will find where it is.
 
  #3. run deep learning modules
-cd {path to robocup2017}/python_scripts
+cd {YOUR_PATH}/python_scripts
 python obj_detector.py --ip 192.168.1.~~
 python reid_module.py
 python pose_detector.py
@@ -572,19 +574,24 @@ Find a word from a recorded speech.
 
 #### follow a person
 ```python
-pio.follow_person(target, target_dist=1.0, timeout=60, stop_criterion='dist', use_reid=False, reid_name=None, stop_word='stop')
+pio.follow_person(self,target,target_dist=1.0,fail_dist_threshold=1.0,dist_strict=False, \
+					  timeout=60,stop_criterion='dist',use_reid=False,reid_name=None,stop_word='stop',\
+					  reid_strict=False,reid_add=False,score_threshold=-10,max_fail_count = 20, short_mode_thr = 1.5)
 ```
 * `target`: a target to follow in `objs` instance.
 * `target_dist`: distance in meters.
 * `timeout`: fails if the stop criterion is not satisfied until `timeout`.
 * `stop_criterion`: `'dist'` for distance or `'speech'` for a word.
 * `use_reid`: follow the closest person in location if `False`, follow the identified person if `True`.
-이전 로케이션에서 가장 가까운 사람을 찾기 if `False`, 아이덴티피케이션 결과가 일치하는 사람 따라가기 if `True`.
 * `reid_name`: follow the person whoes name is `reid_name`, else name the person as `follow`.
 * `stop_word`: the word to make the robot stop following if `stop_criterion` is `'speech'`.
 
 Follow a person until the stop criterion is satisfied.
 
+
+### Important
+To use Google Speech Recognition, you will be needing a google account. (https://cloud.google.com/speech/docs/auth)
+Add the authorized jason file to speech_auth folder and unindent self.speech_client = speech.Client.from_service_account_json('speech_auth/xxx.json') in pepper_io.py
 
 ### Attribute 
 #### pio.speech_memory
