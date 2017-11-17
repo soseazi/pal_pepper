@@ -10,7 +10,7 @@ Youtube Link: https://goo.gl/Pxnf1n
 If you find this code useful in your research, please cite:
 
 ```
-@inproceedings{PALs,
+@inproceedings{PALs2018,
   title={Perception-Action-Learning System for Mobile Social-Service Robots using Deep Learning},
   author={Beom-Jin Lee, Jinyoung Choi, Chung-Yeon Lee, Kyung-Wha Park, Sungjun Choi, Cheolho Han,
 Dong-Sig Han, Christina Baek, Patrick Emaase, Byoung-Tak Zhang},
