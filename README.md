@@ -32,19 +32,6 @@ sudo apt-get update
 sudo apt-get install -y tmux=2.0-1~ppa1~t
 ```
 
-run : `./run_pepper.sh 192.168.1.~` and run your task with IP (`task.py --ip 192.168.1.~`)
-
-exit :`tmux kill-session`
-
-## Additional Files
-`densecap-pretrained-vgg16.t7` is excluded from git source control. It makes git too slow. You have to download the file manually at `ROBOCUP_HOME/python_script/captioning/data/models/densecap/` like below.
-```
-mkdir ROBOCUP_HOME/python_script/captioning/data/models/densecap/
-cd ROBOCUP_HOME/python_script/captioning/data/models/densecap/
-sftp -P3022 kimchi@147.46.219.78
-get ~/Desktop/densecap-pretrained-vgg16.t7
-exit
-```
 
 ## Requirements
 * UBUNTU 14.04 for ROS-INDIGO
