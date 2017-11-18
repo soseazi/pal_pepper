@@ -4,7 +4,8 @@ This is the code for the paper
 ```
 Perception-Action-Learning System for Mobile Social-Service Robots using Deep Learning
 This code has been used in Robocup@Home2017 and won 1st Place in Social Standard Platform (SSPL) AUPAIR - https://www.robocup2017.org/file/awards/Awards_RoboCup_athome.pdf
-Youtube Link: https://goo.gl/Pxnf1n
+AUPAIR team website: https://bi.snu.ac.kr/Robocup/2017/index.html
+Youtube link: https://goo.gl/Pxnf1n
 ```
 
 If you find this code useful in your research, please cite:
@@ -19,8 +20,9 @@ Dong-Sig Han, Christina Baek, Patrick Emaase, Byoung-Tak Zhang},
 }
 ```
 
-#### Ver 1.0 (2017.11.18) by Beom-Jin Lee
+#### Upgraded version of perception module is on: https://github.com/gliese581gg/IPSRO 
 
+## PAL System Ver 1.0 (2017.11.18) by Beom-Jin Lee
 
 ### Use tmux!
 install tmux
@@ -32,9 +34,30 @@ sudo apt-get update
 sudo apt-get install -y tmux=2.0-1~ppa1~t
 ```
 
-
 ## Requirements
 * UBUNTU 14.04 for ROS-INDIGO
+* After cloning this repository
+```
+-- download https://pjreddie.com/media/files/yolo.weights
+-- put it into python_script/bin
+```
+```
+-- download http://posefs1.perception.cs.cmu.edu/Users/ZheCao/pose_iter_440000.caffemodel
+-- put it into python_script/pose_model/model/_trained_COCO
+```
+```
+-- download http://posefs1.perception.cs.cmu.edu/Users/ZheCao/pose_iter_146000.caffemodel
+-- put it in src/pose_model/model/_trained_MPI/
+```
+```
+-- download https://www.dropbox.com/s/ae071mfm2qoyc8v/pose_model.pth?dl=0
+-- put it in src/pose_model/
+```
+```
+-- download http://cs.stanford.edu/people/jcjohns/densecap/densecap-pretrained-vgg16.t7.zip
+-- unzip it
+-- put unzipped file in src/captioning_model/data/models/densecap/
+```
 
 Install below from their websites.
 * NVIDIA driver 375.20
