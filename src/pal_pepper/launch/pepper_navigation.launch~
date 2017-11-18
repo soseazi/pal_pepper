@@ -1,0 +1,28 @@
+<launch>
+  <!-- Map server -->
+  <arg name="map_file" default="$(find PAL_pepper)/launch/maps/temp.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- AMCL -->
+  <arg name="custom_amcl_launch_file" default="$(find PAL_pepper)/launch/includes/amcl/asus_xtion_pro_amcl.launch.xml"/>
+  <arg name="initial_pose_x" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_y" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_a" default="0.0"/>
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+
+  <!-- Move base -->
+  <arg name="custom_param_file" default="$(find PAL_pepper)/param/asus_xtion_pro_costmap_params.yaml"/>
+  <include file="$(find PAL_pepper)/launch/includes/pepper_move_base.xml">
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  </include>
+
+  <!-- Rviz -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find PAL_pepper
+          )/config/pepper.rviz" />
+
+</launch>
+

@@ -1,0 +1,12 @@
+1. start sensor/actuators
+roslaunch pal_pepper pepper_start_jy nao_ip:=($your ip) nao_port:=($your_port)
+
+2. start mapping
+(after launch start_jy)
+roslaunch pal_pepper pepper_gmapping.launch
+
+3. stop mapping and save the map
+rosrun map_server map_saver -f ($full_path)
+
+4. navigation
+roslaunch pal_pepper pepper_navigation.launch map_file:=($full_path_to_your_yaml_file)

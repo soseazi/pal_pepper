@@ -1,0 +1,30 @@
+<launch>
+
+  <param name="/use_sim_time" value="false" />
+  <arg name="nao_ip"              default="$(optenv NAO_IP 192.168.125.14)" />
+  <arg name="nao_port"            default="$(optenv NAO_PORT 9559)" />
+  <arg name="scan_topic" default="scan"/>
+  <arg name="roscore_ip"          default="127.0.0.1" />
+  <arg name="network_interface"   default="eth0" />
+
+  <!-- pepper_full-->
+  <include file="$(find pepper_bringup)/launch/pepper_full.launch">
+    <arg name="nao_ip"            value="$(arg nao_ip)" />
+    <arg name="nao_port"          value="$(arg nao_port)" />
+    <arg name="roscore_ip"        value="$(arg roscore_ip)" />
+    <arg name="network_interface" value="$(arg network_interface)" />
+  </include>
+    <!--- Depth image to laser scan -->
+    <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan" output="screen">
+        <param name="scan_height" value="40"/> 
+        <param name="range_max" value="10"/> 
+        <param name="output_frame_id" value="base_link"/> 
+        <remap from="image" to="pepper_robot/camera/depth_registered/sw_registered/image_rect_raw" />
+        <remap from="camera_info" to="pepper_robot/camera/depth_registered/sw_registered/camera_info" />
+    </node>
+
+    <!--- Cmd_vel to motor -->
+    <!--node name="cmdvel_pub" pkg="PAL_pepper" type="pepper_cmd_vel_publisher.py" output="screen" args="$(arg nao_ip) $(arg nao_port)" /-->
+    <node name="head_fix" pkg="PAL_pepper" type="pepper_head_fix.py" output="screen" args="$(arg nao_ip) $(arg nao_port)" />
+    <node name="scan_merger" pkg="PAL_pepper" type="scan_merger.py" output="screen" args="$(arg nao_ip) $(arg nao_port)" />
+</launch>

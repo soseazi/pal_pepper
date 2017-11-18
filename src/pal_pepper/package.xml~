@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <name>PAL_pepper</name>
+  <version>0.1.0</version>
+  <description>The pepper package for BIlab</description>
+
+  <author>Beom-Jin Lee</author>
+  <maintainer email="soseazi@gmail.com">Beom-Jin Lee</maintainer>
+  <maintainer email="gliese581gg@naver.com">Jinyoung Choi</maintainer>
+
+  <license>Apache 2.0</license>
+  <run_depend>gmapping</run_depend>
+  <run_depend>pepper_bringup</run_depend>
+  <test_depend>rostest</test_depend>
+  <test_depend>roslaunch</test_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
