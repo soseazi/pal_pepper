@@ -600,9 +600,10 @@ Follow a person until the stop criterion is satisfied.
 
 
 ### Important
+```
 To use Google Speech Recognition, you will be needing a google account. (https://cloud.google.com/speech/docs/auth)
 Add the authorized jason file to speech_auth folder and unindent self.speech_client = speech.Client.from_service_account_json('speech_auth/xxx.json') in pepper_io.py
-
+```
 ### Attribute 
 #### pio.speech_memory
 the most recently recognized speech in the `string`.
