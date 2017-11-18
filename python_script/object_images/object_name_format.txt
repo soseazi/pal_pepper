@@ -1,0 +1,3 @@
+class_object_index.png
+
+example) bottle_coke_1.png

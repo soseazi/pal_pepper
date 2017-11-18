@@ -1,0 +1,21 @@
+1. install torch
+git clone https://github.com/torch/distro.git ~/torch --recursive
+cd ~/torch
+bash install-deps
+./install.sh (Choose 'yes' if it asks something)
+source ~/.bashrc
+
+luarocks install nn
+luarocks install image
+luarocks install lua-cjson
+luarocks install https://raw.githubusercontent.com/qassemoquab/stnbhwd/master/stnbhwd-scm-1.rockspec
+luarocks install https://raw.githubusercontent.com/jcjohnson/torch-rnn/master/torch-rnn-scm-1.rockspec
+
+luarocks install cutorch
+luarocks install cunn
+luarocks install cudnn
+
+
+2. install torch-ros
+luarocks install md5
+luarocks install --server=http://luarocks.org/dev torch-ros
