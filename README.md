@@ -15,7 +15,7 @@ If you find this code useful in your research, please cite:
   title={Perception-Action-Learning System for Mobile Social-Service Robots using Deep Learning},
   author={Beom-Jin Lee, Jinyoung Choi, Chung-Yeon Lee, Kyung-Wha Park, Sungjun Choi, Cheolho Han,
 Dong-Sig Han, Christina Baek, Patrick Emaase, Byoung-Tak Zhang},
-  booktitle={AAAI},
+  booktitle={AAAI Demonstration},
   year={2018}
 }
 ```
