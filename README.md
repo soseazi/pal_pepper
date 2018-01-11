@@ -1,12 +1,12 @@
 # pal_pepper
 This is the code for the paper
 
-```
-Perception-Action-Learning System for Mobile Social-Service Robots using Deep Learning
-This code has been used in Robocup@Home2017 and won 1st Place in Social Standard Platform (SSPL) AUPAIR - https://www.robocup2017.org/file/awards/Awards_RoboCup_athome.pdf
-AUPAIR team website: https://bi.snu.ac.kr/Robocup/2017/index.html
-Youtube link: https://goo.gl/Pxnf1n
-```
+
+#### Perception-Action-Learning System for Mobile Social-Service Robots using Deep Learning
+####This code has been used in Robocup@Home2017 and won 1st Place in Social Standard Platform (SSPL) AUPAIR - https://www.robocup2017.org/file/awards/Awards_RoboCup_athome.pdf
+####AUPAIR team website: https://bi.snu.ac.kr/Robocup/2017/index.html
+####Youtube link: https://goo.gl/Pxnf1n
+
 
 If you find this code useful in your research, please cite:
 
