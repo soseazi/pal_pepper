@@ -11,7 +11,7 @@ This is the code for the paper
 #### Youtube link: https://goo.gl/Pxnf1n
 
 
-If you find this code useful in your research, please cite:
+If you find this code useful in your research, please cite: (will be available after Feb, 06, 2018)
 
 ```
 @inproceedings{PALs2018,
