@@ -17,7 +17,7 @@ If you find this code useful in your research, please cite: (will be available a
 @inproceedings{PALs2018,
   title={Perception-Action-Learning System for Mobile Social-Service Robots using Deep Learning},
   author={Lee, Beom-Jin and  Choi, Jinyoung and Lee, Chung-Yeon and Park, Kyung-Wha and Choi, Sungjun and Han, Cheolho and Han, Dong-Sig  and Baek, Christina and Emaase, Patrick and Zhang, Byoung-Tak },
-  booktitle={AAAI Demonstration},
+  booktitle={AAAI},
   year={2018}
 }
 ```
